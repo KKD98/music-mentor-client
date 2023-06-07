@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import GoogleLogin from '../../Shared/GoogleLogin/GoogleLogin';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -20,6 +21,9 @@ const Login = () => {
     }
     return (
         <div className='pt-20'>
+         <Helmet>
+            <title>Login | MusicMentor</title>
+        </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
