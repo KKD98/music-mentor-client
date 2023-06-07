@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import GoogleLogin from '../../Shared/GoogleLogin/GoogleLogin';
 
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
         console.log(data);
+        reset();
     }
     return (
         <div className='pt-16'>
