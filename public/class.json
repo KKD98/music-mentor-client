@@ -1,102 +1,102 @@
 [
     {
-        "image": "https://example.com/class1.jpg",
-        "classname": "Guitar Class",
+        "classImage": "https://i.ibb.co/hm4GdtL/sandra-gabriel-H4-W4-Mfo-U1t-I-unsplash-2.jpg",
+        "className": "Guitar Class",
         "_id": "613bfcdd77e7e661234567a1",
         "instructorName": "John Doe",
         "enroll_total_student": 15,
-        "amount": "$100",
+        "amount": "100",
         "status": "approved",
-        "maximum_student": 20
+        "totalStudent": 20
     },
     {
-        "image": "https://example.com/class2.jpg",
-        "classname": "Piano Class",
+        "classImage": "https://i.ibb.co/qxS2kLP/gabriel-tovar-Thuqum-Ayhe-Y-unsplash.jpg",
+        "className": "Piano Class",
         "_id": "613bfcdd77e7e661234567a2",
         "instructorName": "Jane Smith",
         "enroll_total_student": 12,
-        "amount": "$120",
+        "amount": "120",
         "status": "approved",
-        "maximum_student": 15
+        "totalStudent": 15
     },
     {
-        "image": "https://example.com/class3.jpg",
-        "classname": "Violin Class",
+        "classImage": "https://i.ibb.co/qxS2kLP/gabriel-tovar-Thuqum-Ayhe-Y-unsplash.jpg",
+        "className": "Violin Class",
         "_id": "613bfcdd77e7e661234567a3",
         "instructorName": "David Johnson",
         "enroll_total_student": 8,
-        "amount": "$80",
+        "amount": "80",
         "status": "approved",
-        "maximum_student": 10
+        "totalStudent": 10
     },
     {
-        "image": "https://example.com/class4.jpg",
-        "classname": "Drum Class",
+        "classImage": "https://i.ibb.co/qxS2kLP/gabriel-tovar-Thuqum-Ayhe-Y-unsplash.jpg",
+        "className": "Drum Class",
         "_id": "613bfcdd77e7e661234567a4",
         "instructorName": "Sarah Williams",
         "enroll_total_student": 5,
-        "amount": "$150",
+        "amount": "150",
         "status": "approved",
-        "maximum_student": 8
+        "totalStudent": 8
     },
     {
-        "image": "https://example.com/class5.jpg",
-        "classname": "Flute Class",
+        "classImage": "https://i.ibb.co/qxS2kLP/gabriel-tovar-Thuqum-Ayhe-Y-unsplash.jpg",
+        "className": "Flute Class",
         "_id": "613bfcdd77e7e661234567a5",
         "instructorName": "Michael Brown",
         "enroll_total_student": 10,
-        "amount": "$90",
+        "amount": "90",
         "status": "approved",
-        "maximum_student": 15
+        "totalStudent": 15
     },
     {
-        "image": "https://example.com/class6.jpg",
-        "classname": "Keyboard Class",
+        "classImage": "https://i.ibb.co/qxS2kLP/gabriel-tovar-Thuqum-Ayhe-Y-unsplash.jpg",
+        "className": "Keyboard Class",
         "_id": "613bfcdd77e7e661234567a6",
         "instructorName": "Emily Davis",
         "enroll_total_student": 18,
-        "amount": "$110",
+        "amount": "110",
         "status": "approved",
-        "maximum_student": 20
+        "totalStudent": 20
     },
     {
-        "image": "https://example.com/class7.jpg",
-        "classname": "Bass Guitar Class",
+        "classImage": "https://i.ibb.co/qxS2kLP/gabriel-tovar-Thuqum-Ayhe-Y-unsplash.jpg",
+        "className": "Bass Guitar Class",
         "_id": "613bfcdd77e7e661234567a7",
         "instructorName": "Daniel Wilson",
         "enroll_total_student": 6,
-        "amount": "$130",
+        "amount": "130",
         "status": "approved",
-        "maximum_student": 10
+        "totalStudent": 10
     },
     {
-        "image": "https://example.com/class8.jpg",
-        "classname": "Harp Class",
+        "classImage": "https://i.ibb.co/qxS2kLP/gabriel-tovar-Thuqum-Ayhe-Y-unsplash.jpg",
+        "className": "Harp Class",
         "_id": "613bfcdd77e7e661234567a8",
         "instructorName": "Olivia Martinez",
         "enroll_total_student": 3,
-        "amount": "$140",
+        "amount": "140",
         "status": "approved",
-        "maximum_student": 5
+        "totalStudent": 5
     },
     {
-        "image": "https://example.com/class9.jpg",
-        "classname": "Trombone Class",
+        "classImage": "https://i.ibb.co/qxS2kLP/gabriel-tovar-Thuqum-Ayhe-Y-unsplash.jpg",
+        "className": "Trombone Class",
         "_id": "613bfcdd77e7e661234567a9",
         "instructorName": "William Anderson",
         "enroll_total_student": 9,
-        "amount": "$95",
+        "amount": "95",
         "status": "approved",
-        "maximum_student": 12
+        "totalStudent": 12
     },
     {
-        "image": "https://example.com/class10.jpg",
-        "classname": "Clarinet Class",
+        "classImage": "https://i.ibb.co/qxS2kLP/gabriel-tovar-Thuqum-Ayhe-Y-unsplash.jpg",
+        "className": "Clarinet Class",
         "_id": "613bfcdd77e7e661234567b0",
         "instructorName": "Sophia Thompson",
         "enroll_total_student": 13,
-        "amount": "$105",
+        "amount": "105",
         "status": "approved",
-        "maximum_student": 15
+        "totalStudent": 15
     }
 ]
