@@ -26,7 +26,7 @@ const Footer = () => {
                     <span className="footer-title">Social</span>
                     <div className='flex gap-4 text-4xl'>
                         <FaFacebook className='bg-blue-700 text-white rounded-full border-none'></FaFacebook>
-                        <FaInstagram className='bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg'></FaInstagram>
+                        <FaInstagram className='bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 rounded-lg'></FaInstagram>
                         <FaTwitter className='bg-white text-sky-500 p-1 rounded-lg'></FaTwitter>
                     </div>
                 </div>

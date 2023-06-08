@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link , NavLink} from "react-router-dom";
 import logo from '../../assets/logo.png'
+import { AuthContext } from '../../providers/AuthProvider';
+import { Tooltip } from 'react-tooltip';
 
 
 const NavBar = () => {
+    const {user , logOut} = useContext(AuthContext);
+
+    const userImage = user?.photoURL ? user.photoURL : " ";
+    const userName = user?.displayName ? user.displayName : " ";
+
+
+    const handleLogOut = () => {
+        logOut()
+        .then(() => {})
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
     const navbarOptions = <>
         <li className='hover:text-rose-800'><NavLink to="/"  style={({ isActive }) => {
                             return {
@@ -23,12 +39,12 @@ const NavBar = () => {
                                 background: isActive && "black"
                             };
                         }}>Classes</NavLink></li>
-        <li className='hover:text-rose-800'><NavLink to="/dashboard" style={({ isActive }) => {
+       {user &&  <li className='hover:text-rose-800'><NavLink to="/dashboard" style={({ isActive }) => {
                             return {
                                 color: isActive && "red",
                                 background: isActive && "black"
                             };
-                        }}>DashBoard</NavLink></li>
+                        }}>DashBoard</NavLink></li>}
     </>
     return (
         <div className="navbar fixed z-10 max-w-screen-xl bg-black text-white ">
@@ -52,7 +68,14 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to="/login" className="btn bg-rose-700 border-none text-white hover:bg-rose-900">Login</Link>
+            <Tooltip id='userName'></Tooltip>
+            {
+                userImage && <div data-tooltip-id='userName' data-tooltip-content={userName}><img className='w-[42px] mr-3 rounded-full' src={userImage}/></div>
+            }
+                {
+                    user ? <button onClick={handleLogOut} className="btn bg-rose-700 border-none text-white hover:bg-rose-900">Logout</button> :
+                    <Link to="/login" className="btn bg-rose-700 border-none text-white hover:bg-rose-900">Login</Link>
+                }
             </div>
         </div>
     );

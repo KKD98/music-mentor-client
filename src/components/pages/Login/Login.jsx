@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import img from '../../../assets/login.jpg';
 import { useForm } from 'react-hook-form';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from '../../Shared/GoogleLogin/GoogleLogin';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Helmet } from 'react-helmet-async';
+import { AuthContext } from '../../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
+
+    const {signIn} = useContext(AuthContext);
 
     const handleTogglePassword = () => {
         setShowPassword(!showPassword);
@@ -18,13 +27,31 @@ const Login = () => {
     const onSubmit = data => {
         console.log(data);
         reset();
+        
+        signIn(data.email , data.password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            Swal.fire({
+                title: 'User login Successfully',
+                showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+                }
+              });
+              navigate(from, {replace: true});
+        })
     }
     return (
-        <div className='pt-20'>
+        <div>
          <Helmet>
             <title>Login | MusicMentor</title>
         </Helmet>
+        <p className='text-center text-4xl font-semibold bg-rose-800 p-3 text-white'>Please Login!!!</p>
             <div className="hero min-h-screen bg-base-200">
+           
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <img src={img} alt="" />
@@ -51,7 +78,7 @@ const Login = () => {
 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn bg-rose-700 text-white hover:bg-rose-900">Login</button>
+                            <input type="submit" className="btn bg-rose-700 text-white hover:bg-rose-900" value="Login" />
                             </div>
                         </form>
                         <div className="divider">OR</div>

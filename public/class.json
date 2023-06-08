@@ -1,0 +1,102 @@
+[
+    {
+        "image": "https://example.com/class1.jpg",
+        "classname": "Guitar Class",
+        "_id": "613bfcdd77e7e661234567a1",
+        "instructorName": "John Doe",
+        "enroll_total_student": 15,
+        "amount": "$100",
+        "status": "approved",
+        "maximum_student": 20
+    },
+    {
+        "image": "https://example.com/class2.jpg",
+        "classname": "Piano Class",
+        "_id": "613bfcdd77e7e661234567a2",
+        "instructorName": "Jane Smith",
+        "enroll_total_student": 12,
+        "amount": "$120",
+        "status": "approved",
+        "maximum_student": 15
+    },
+    {
+        "image": "https://example.com/class3.jpg",
+        "classname": "Violin Class",
+        "_id": "613bfcdd77e7e661234567a3",
+        "instructorName": "David Johnson",
+        "enroll_total_student": 8,
+        "amount": "$80",
+        "status": "approved",
+        "maximum_student": 10
+    },
+    {
+        "image": "https://example.com/class4.jpg",
+        "classname": "Drum Class",
+        "_id": "613bfcdd77e7e661234567a4",
+        "instructorName": "Sarah Williams",
+        "enroll_total_student": 5,
+        "amount": "$150",
+        "status": "approved",
+        "maximum_student": 8
+    },
+    {
+        "image": "https://example.com/class5.jpg",
+        "classname": "Flute Class",
+        "_id": "613bfcdd77e7e661234567a5",
+        "instructorName": "Michael Brown",
+        "enroll_total_student": 10,
+        "amount": "$90",
+        "status": "approved",
+        "maximum_student": 15
+    },
+    {
+        "image": "https://example.com/class6.jpg",
+        "classname": "Keyboard Class",
+        "_id": "613bfcdd77e7e661234567a6",
+        "instructorName": "Emily Davis",
+        "enroll_total_student": 18,
+        "amount": "$110",
+        "status": "approved",
+        "maximum_student": 20
+    },
+    {
+        "image": "https://example.com/class7.jpg",
+        "classname": "Bass Guitar Class",
+        "_id": "613bfcdd77e7e661234567a7",
+        "instructorName": "Daniel Wilson",
+        "enroll_total_student": 6,
+        "amount": "$130",
+        "status": "approved",
+        "maximum_student": 10
+    },
+    {
+        "image": "https://example.com/class8.jpg",
+        "classname": "Harp Class",
+        "_id": "613bfcdd77e7e661234567a8",
+        "instructorName": "Olivia Martinez",
+        "enroll_total_student": 3,
+        "amount": "$140",
+        "status": "approved",
+        "maximum_student": 5
+    },
+    {
+        "image": "https://example.com/class9.jpg",
+        "classname": "Trombone Class",
+        "_id": "613bfcdd77e7e661234567a9",
+        "instructorName": "William Anderson",
+        "enroll_total_student": 9,
+        "amount": "$95",
+        "status": "approved",
+        "maximum_student": 12
+    },
+    {
+        "image": "https://example.com/class10.jpg",
+        "classname": "Clarinet Class",
+        "_id": "613bfcdd77e7e661234567b0",
+        "instructorName": "Sophia Thompson",
+        "enroll_total_student": 13,
+        "amount": "$105",
+        "status": "approved",
+        "maximum_student": 15
+    }
+]

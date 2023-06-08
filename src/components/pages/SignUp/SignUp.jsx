@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import img from '../../../assets/login.jpg';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogin from '../../Shared/GoogleLogin/GoogleLogin';
 import { Helmet } from 'react-helmet-async';
+import { AuthContext } from '../../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
   const {
@@ -14,9 +16,33 @@ const SignUp = () => {
     getValues,
   } = useForm();
 
+  const {createUser , updateUserProfile} = useContext(AuthContext);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
     console.log(data);
-    reset();
+    createUser(data.email , data.password)
+    .then(result => {
+      const signedInUser =result.user;
+      console.log("signedInUser", signedInUser);
+      updateUserProfile(data.name, data.photoUrl)
+      .then(() => {
+        console.log("User prifile updated successfullys");
+        reset();
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'User created successfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        navigate('/login')
+     })
+      .catch(error => console.log(error))
+      
+    })
   };
 
   const validateConfirmPassword = (value) => {
@@ -25,10 +51,11 @@ const SignUp = () => {
   };
 
   return (
-    <div className="pt-16">
+    <div>
       <Helmet>
         <title>SignUp | MusicMentor</title>
       </Helmet>
+      <p className='text-center text-4xl font-semibold bg-rose-800 p-3 text-white'>Please Sign Up!!!</p>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
@@ -120,9 +147,7 @@ const SignUp = () => {
                 )}
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-rose-700 text-white hover:bg-rose-900">
-                  Sign Up
-                </button>
+              <input type="submit" className="btn bg-rose-700 text-white hover:bg-rose-900" value="Sign Up" />
               </div>
             </form>
             <div className="divider">OR</div>
