@@ -6,6 +6,10 @@ import Login from "../components/pages/Login/Login";
 import SignUp from "../components/pages/SignUp/SignUp";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
+import AllClasses from "../components/pages/AllClasses/AllClasses";
+import DashBoard from "../Layouts/DashBoard/DashBoard";
+import AddAClass from "../components/pages/DashBoard/InstructorDashBoard/AddAClass";
+import MyClasses from "../components/pages/DashBoard/InstructorDashBoard/MyClasses";
 
 
 export const router = createBrowserRouter([
@@ -20,7 +24,11 @@ export const router = createBrowserRouter([
         },
         {
             path: "instructors",
-            element: <PrivateRoute><Instructors></Instructors></PrivateRoute>
+            element: <Instructors></Instructors>
+        },
+        {
+          path: "allclasses",
+          element: <AllClasses></AllClasses>
         },
         {
             path:'login',
@@ -32,4 +40,18 @@ export const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path: 'dashboard',
+      element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+      children: [
+        {
+          path: "addaclass",
+          element: <AddAClass></AddAClass>
+        },
+        {
+          path:"myclasses",
+          element: <MyClasses></MyClasses>
+        }
+      ]
+    }
   ]);

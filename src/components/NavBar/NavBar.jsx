@@ -39,7 +39,7 @@ const NavBar = () => {
                                 background: isActive && "black"
                             };
                         }}>Classes</NavLink></li>
-       {user &&  <li className='hover:text-rose-800'><NavLink to="/dashboard" style={({ isActive }) => {
+       {user &&  <li className='hover:text-rose-800'><NavLink to="/dashboard/addaclass" style={({ isActive }) => {
                             return {
                                 color: isActive && "red",
                                 background: isActive && "black"

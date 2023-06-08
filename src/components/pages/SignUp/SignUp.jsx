@@ -16,33 +16,47 @@ const SignUp = () => {
     getValues,
   } = useForm();
 
-  const {createUser , updateUserProfile} = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data);
-    createUser(data.email , data.password)
-    .then(result => {
-      const signedInUser =result.user;
-      console.log("signedInUser", signedInUser);
-      updateUserProfile(data.name, data.photoUrl)
-      .then(() => {
-        console.log("User prifile updated successfullys");
-        reset();
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'User created successfully',
-          showConfirmButton: false,
-          timer: 1500
-        })
-        navigate('/login')
-     })
-      .catch(error => console.log(error))
-      
-    })
+    createUser(data.email, data.password)
+      .then(result => {
+        const signedInUser = result.user;
+        console.log("signedInUser", signedInUser);
+
+        updateUserProfile(data.name, data.photoUrl)
+          .then(() => {
+            const saveUser = {name: data.name, email: data.email, image: data.photoUrl};
+            fetch('http://localhost:5000/users' , {
+              method: "POST",
+              headers: {
+                "content-type": "application/json"
+              },
+              body: JSON.stringify(saveUser)
+            })
+              .then(res => res.json())
+              .then(data => {
+                if (data.insertedId) {
+                  reset();
+                  Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'User created successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  navigate('/login')
+                }
+              })
+
+
+          })
+          .catch(error => console.log(error))
+
+      })
   };
 
   const validateConfirmPassword = (value) => {
@@ -147,7 +161,7 @@ const SignUp = () => {
                 )}
               </div>
               <div className="form-control mt-6">
-              <input type="submit" className="btn bg-rose-700 text-white hover:bg-rose-900" value="Sign Up" />
+                <input type="submit" className="btn bg-rose-700 text-white hover:bg-rose-900" value="Sign Up" />
               </div>
             </form>
             <div className="divider">OR</div>

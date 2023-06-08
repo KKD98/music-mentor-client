@@ -15,7 +15,7 @@ const SingleClass = ({ classItem }) => {
                 <p>Total Student: {totalStudent}</p>
                 </div>
                 <div className="card-actions">
-                   <Link to="/classes"> <button className="btn bg-rose-700 border-none text-white hover:bg-rose-900">See All Classes</button></Link>
+                   <Link to="/allclasses"> <button className="btn bg-rose-700 border-none text-white hover:bg-rose-900">See All Classes</button></Link>
                 </div>
             </div>
         </div>
