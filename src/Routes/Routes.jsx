@@ -10,6 +10,9 @@ import AllClasses from "../components/pages/AllClasses/AllClasses";
 import DashBoard from "../Layouts/DashBoard/DashBoard";
 import AddAClass from "../components/pages/DashBoard/InstructorDashBoard/AddAClass";
 import MyClasses from "../components/pages/DashBoard/InstructorDashBoard/MyClasses";
+import ManageAllUsers from "../components/pages/DashBoard/AdminDashBoard/ManageAllUsers/ManageAllUsers";
+import ManageAllClasses from "../components/pages/DashBoard/AdminDashBoard/ManageAllClasses/ManageAllClasses";
+
 
 
 export const router = createBrowserRouter([
@@ -51,6 +54,14 @@ export const router = createBrowserRouter([
         {
           path:"myclasses",
           element: <MyClasses></MyClasses>
+        },
+        {
+          path: "manageallusers",
+          element: <ManageAllUsers></ManageAllUsers>
+        },
+        {
+          path: "manageallclasses",
+          element: <ManageAllClasses></ManageAllClasses>
         }
       ]
     }

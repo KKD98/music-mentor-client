@@ -8,6 +8,9 @@ import { Tooltip } from 'react-tooltip';
 const NavBar = () => {
     const {user , logOut} = useContext(AuthContext);
 
+    const isAdmin = true;
+    const isInstructor = false;
+
     const userImage = user?.photoURL ? user.photoURL : " ";
     const userName = user?.displayName ? user.displayName : " ";
 
@@ -39,7 +42,7 @@ const NavBar = () => {
                                 background: isActive && "black"
                             };
                         }}>Classes</NavLink></li>
-       {user &&  <li className='hover:text-rose-800'><NavLink to="/dashboard/addaclass" style={({ isActive }) => {
+       {user &&  <li className='hover:text-rose-800'><NavLink to={isAdmin ? '/dashboard/manageallusers' : isInstructor ? '/dashboard/addaclass' : '/dashboard/myselectedclasses'} style={({ isActive }) => {
                             return {
                                 color: isActive && "red",
                                 background: isActive && "black"
