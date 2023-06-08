@@ -10,14 +10,32 @@ const GoogleLogin = () => {
 
     const from = location.state?.from?.pathname || '/';
 
-    const { handleGoogleSignIn  } = useContext(AuthContext);
-    const signInWithGoogle = () => {
-        handleGoogleSignIn();
-        navigate(from , {replace: true});
+    const { signInWithGoogle  } = useContext(AuthContext);
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result => {
+            const loggedInUser = result.user;
+
+            const saveUser = {name: loggedInUser.displayName, email: loggedInUser.email, image: loggedInUser.photoURL};
+
+            fetch('http://localhost:5000/users' , {
+              method: "POST",
+              headers: {
+                "content-type": "application/json"
+              },
+              body: JSON.stringify(saveUser)
+            })
+              .then(res => res.json())
+              .then(() => {
+                    navigate(from , {replace: true});
+              })
+        })
+        
     }
     return (
         <div className='text-center my-3'>
-            <button onClick={signInWithGoogle}>
+            <button onClick={handleGoogleSignIn}>
                 <FaGoogle className='text-blue-600 text-2xl'></FaGoogle>
             </button>
         </div>

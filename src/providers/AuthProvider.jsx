@@ -21,11 +21,9 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(auth , email , password);
     }
 
-    const handleGoogleSignIn = () => {
+    const signInWithGoogle = () => {
         setLoading(true);
-        signInWithPopup(auth , googleProvider)
-        .then(res => console.log(res.user))
-        .catch(error => console.log(error.message))
+        return signInWithPopup(auth , googleProvider)
     }
 
     const logOut = () => {
@@ -55,7 +53,7 @@ const AuthProvider = ({children}) => {
         loading,
         createUser,
         signIn,
-        handleGoogleSignIn,
+        signInWithGoogle,
         updateUserProfile,
         logOut,
     }
