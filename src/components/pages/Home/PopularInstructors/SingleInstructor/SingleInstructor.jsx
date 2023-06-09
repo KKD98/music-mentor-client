@@ -10,7 +10,7 @@ const SingleInstructor = ({ singleInstructor }) => {
             <div className='w-1/2'>
                 <p>Instructor Name: {name}</p>
                 {
-                    instructor_class.map(item => <p>{item}</p>)
+                    instructor_class.map(item => <p key={item}>{item}</p>)
                 }
             </div>
         </div>

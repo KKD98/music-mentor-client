@@ -8,8 +8,9 @@ import { Tooltip } from 'react-tooltip';
 const NavBar = () => {
     const {user , logOut} = useContext(AuthContext);
 
-    const isAdmin = true;
-    const isInstructor = false;
+    // TODO: admin and instructor ke server theke anbo
+    const isAdmin = false;
+    const isInstructor = true;
 
     const userImage = user?.photoURL ? user.photoURL : " ";
     const userName = user?.displayName ? user.displayName : " ";

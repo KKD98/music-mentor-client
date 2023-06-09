@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 
 const DashBoard = () => {
-    // TODO
-    const isAdmin = true;
-    const isInstructor = false;
+    // TODO: admin and instructor ke server theke anbo
+    const isAdmin = false;
+    const isInstructor = true;
 
     return (
         <div className="drawer lg:drawer-open">
@@ -47,12 +47,6 @@ const DashBoard = () => {
                             background: isActive && "black"
                         };
                     }}>My Classes</NavLink></li>
-                    <li className='text-2xl font-semibold'><NavLink to="/dashboard/allusers" style={({ isActive }) => {
-                        return {
-                            color: isActive && "#660032",
-                            background: isActive && "black"
-                        };
-                    }}>All Users</NavLink></li>
                             </> :
 
                             <> <li className='text-2xl font-semibold'><NavLink to="/dashboard/addaclass" style={({ isActive }) => {

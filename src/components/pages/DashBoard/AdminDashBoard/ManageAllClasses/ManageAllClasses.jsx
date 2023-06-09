@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const ManageAllClasses = () => {
     const [classes, setClasses] = useState([]);
@@ -19,6 +20,9 @@ const ManageAllClasses = () => {
 
     return (
         <div>
+         <Helmet>
+                <title>ManageAllClasses | MusicMentor</title>
+            </Helmet>
             <p className='text-4xl text-center font-semibold text-rose-700'>Total Classes: {classes.length}</p>
 
             <div className="overflow-x-auto">
