@@ -14,6 +14,9 @@ import ManageAllUsers from "../components/pages/DashBoard/AdminDashBoard/ManageA
 import ManageAllClasses from "../components/pages/DashBoard/AdminDashBoard/ManageAllClasses/ManageAllClasses";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
+import MySelectedClasses from "../components/pages/DashBoard/StudentDashBoard/MySelectedClasses/MySelectedClasses";
+import MyEnrolledClasses from "../components/pages/DashBoard/StudentDashBoard/MyEnrolledClasses/MyEnrolledClasses";
+import StudentRoute from "./StudentRoute";
 
 
 
@@ -49,6 +52,7 @@ export const router = createBrowserRouter([
       path: 'dashboard',
       element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
       children: [
+        // instructor route
         {
           path: "addaclass",
           element: <InstructorRoute><AddAClass></AddAClass></InstructorRoute>
@@ -57,6 +61,7 @@ export const router = createBrowserRouter([
           path:"myclasses",
           element: <InstructorRoute><MyClasses></MyClasses></InstructorRoute>
         },
+        // admin route
         {
           path: "manageallusers",
           element: <AdminRoute><ManageAllUsers></ManageAllUsers></AdminRoute>
@@ -64,6 +69,15 @@ export const router = createBrowserRouter([
         {
           path: "manageallclasses",
           element: <AdminRoute><ManageAllClasses></ManageAllClasses></AdminRoute>
+        },
+        // student route
+        {
+          path: "selectedclasses",
+          element: <StudentRoute><MySelectedClasses></MySelectedClasses></StudentRoute>
+        },
+        {
+          path: "myenrolledclasses",
+          element: <StudentRoute><MyEnrolledClasses></MyEnrolledClasses></StudentRoute>
         }
       ]
     }

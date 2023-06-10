@@ -115,7 +115,7 @@ const ManageAllUsers = () => {
                                 <td>{user.role === 'admin' ? 'admin' : user.role === 'instructor' ? 'instructor' : 'student'}</td>
                                 <td>
                                    {
-                                    user?.role ?  <button className="btn btn-xs bg-rose-700 border-none text-white hover:bg-rose-900"
+                                    user?.role !== "student" ?   <button className="btn btn-xs bg-rose-700 border-none text-white hover:bg-rose-900"
                                         disabled
                                     >Make Admin</button> : 
                                      <button
@@ -127,7 +127,7 @@ const ManageAllUsers = () => {
                                 </td>
                                 <td>
                                     {
-                                        user?.role ? <button className="btn btn-xs bg-rose-700 border-none text-white hover:bg-rose-900"
+                                        user?.role !== "student" ? <button className="btn btn-xs bg-rose-700 border-none text-white hover:bg-rose-900"
                                         disabled>Make Instructor</button> :
                                         <button
                                         onClick={() => handleMakeInstructor(user)}

@@ -46,7 +46,7 @@ const NavBar = () => {
                                 background: isActive && "black"
                             };
                         }}>Classes</NavLink></li>
-       {user &&  <li><NavLink to={isAdmin ? '/dashboard/manageallusers' : isInstructor ? '/dashboard/addaclass' : '/dashboard/myselectedclasses'} >DashBoard</NavLink></li>}
+       {user &&  <li><NavLink to={isAdmin ? '/dashboard/manageallusers' : isInstructor ? '/dashboard/addaclass' : '/dashboard/selectedclasses'} >DashBoard</NavLink></li>}
     
     </>
     return (

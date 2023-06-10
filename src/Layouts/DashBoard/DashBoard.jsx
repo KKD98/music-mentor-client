@@ -2,13 +2,13 @@ import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../../hooks/useAdmin';
 import useInstructor from '../../hooks/useInstructor';
+import useStudent from '../../hooks/useStudent';
 
 const DashBoard = () => {
-    // TODO: admin and instructor ke server theke anbo
-    // const isAdmin = false;
+
     const [isAdmin] = useAdmin();
-    // const isInstructor = true;
     const [isInstructor] = useInstructor();
+    const [isStudent] = useStudent();
 
     return (
         <div className="drawer lg:drawer-open">
@@ -23,7 +23,7 @@ const DashBoard = () => {
                 <ul className="menu p-4 w-80 h-full bg-black text-white">
 
                     {
-                        isAdmin ? <> <li className='text-2xl font-semibold'><NavLink to="/dashboard/manageallusers" style={({ isActive }) => {
+                        isAdmin && <> <li className='text-2xl font-semibold'><NavLink to="/dashboard/manageallusers" style={({ isActive }) => {
                             return {
                                 color: isActive && "#660032",
                                 background: isActive && "black"
@@ -36,9 +36,11 @@ const DashBoard = () => {
                                 };
                             }}>Manage Classes</NavLink></li></>
 
-                            : 
+                    }
+
+                    {
             
-                        isInstructor ? <>
+                        isInstructor && <>
                             <li className='text-2xl font-semibold'><NavLink to="/dashboard/addaclass" style={({ isActive }) => {
                         return {
                             color: isActive && "#660032",
@@ -51,15 +53,19 @@ const DashBoard = () => {
                             background: isActive && "black"
                         };
                     }}>My Classes</NavLink></li>
-                            </> :
+                            </> 
 
-                            <> <li className='text-2xl font-semibold'><NavLink to="/dashboard/addaclass" style={({ isActive }) => {
+                    }
+
+                    { isStudent &&
+
+                            <> <li className='text-2xl font-semibold'><NavLink to="/dashboard/selectedclasses" style={({ isActive }) => {
                         return {
                             color: isActive && "#660032",
                             background: isActive && "black"
                         };
                     }}>My selected class</NavLink></li>
-                    <li className='text-2xl font-semibold'><NavLink to="/dashboard/myclasses" style={({ isActive }) => {
+                    <li className='text-2xl font-semibold'><NavLink to="/dashboard/myenrolledclasses" style={({ isActive }) => {
                         return {
                             color: isActive && "#660032",
                             background: isActive && "black"
