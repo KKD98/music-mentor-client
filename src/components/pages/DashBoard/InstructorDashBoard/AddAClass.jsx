@@ -2,16 +2,18 @@ import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../../providers/AuthProvider';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 const image_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
 
 
 const AddAClass = () => {
     const { user } = useContext(AuthContext);
+    const [axiosSecure] = useAxiosSecure();
     const {displayName, email, photoURL} = user;
-    console.log(user)
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_hosting_token}`;
 
     const onSubmit = (data) => {
@@ -29,7 +31,21 @@ const AddAClass = () => {
                     const imgURL = imgRes.data.display_url;
                     const { class_name, available_seats, price } = data;
                     const newClass = { instructor_name:displayName, instructor_email: email, instructor_image: photoURL, class_name, class_image: imgURL, available_seats: parseInt(available_seats), price: parseFloat(price), status: "pending" };
-                    console.log(newClass)
+                    console.log("newClass:", newClass);
+                    axiosSecure.post('/addclass', newClass)
+                    .then(data => {
+                        console.log('posting class:', data.data);
+                        if(data.data.insertedId){
+                            reset();
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Class added successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                              })
+                        }
+                    })
                 }
             });
     };
