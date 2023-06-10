@@ -13,6 +13,7 @@ import MyClasses from "../components/pages/DashBoard/InstructorDashBoard/MyClass
 import ManageAllUsers from "../components/pages/DashBoard/AdminDashBoard/ManageAllUsers/ManageAllUsers";
 import ManageAllClasses from "../components/pages/DashBoard/AdminDashBoard/ManageAllClasses/ManageAllClasses";
 import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 
 
 
@@ -50,11 +51,11 @@ export const router = createBrowserRouter([
       children: [
         {
           path: "addaclass",
-          element: <AddAClass></AddAClass>
+          element: <InstructorRoute><AddAClass></AddAClass></InstructorRoute>
         },
         {
           path:"myclasses",
-          element: <MyClasses></MyClasses>
+          element: <InstructorRoute><MyClasses></MyClasses></InstructorRoute>
         },
         {
           path: "manageallusers",
