@@ -53,15 +53,19 @@ const SingleClass = ({classItem}) => {
               })
         }
     }
+
+    const cardStyle = {
+        backgroundColor: available_seats === 0 ? 'red-700' : 'black'
+      };
     
     return (
-        <div key={_id} className="card w-full bg-black text-white shadow-xl">
+        <div key={_id} className={`card w-full bg-${cardStyle.backgroundColor} text-white shadow-xl`}>
             <figure><img className='p-5 w-full h-64' src={class_image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{class_name} Class</h2>
                 <p>Instructor Name: {instructor_name}</p>
                 <p>Available seats: {available_seats}</p>
-                <p>Price: {price}</p>
+                <p>Price: ${price}</p>
                 <div className="card-actions justify-center">
                    {
                     isStudent && available_seats > 0 ? <button onClick={() => handleSelectClass(classItem)} className="btn bg-rose-700 hover:bg-rose-900 text-white border-none">Select</button>
