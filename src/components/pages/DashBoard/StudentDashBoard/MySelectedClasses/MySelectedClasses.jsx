@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const MySelectedClasses = () => {
     const [selectedClasses, setSelectedClasses] = useState([]);
@@ -17,6 +18,39 @@ const MySelectedClasses = () => {
                 console.log('Error fetching data:', error);
             });
     }, []);
+
+    const handleDeleteClass = id => {
+        console.log(id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/myselectedclass/${id}`, {
+                    method: "DELETE"
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.deletedCount > 0){
+                        Swal.fire(
+                            'Deleted!',
+                            'Your class has been deleted.',
+                            'success'
+                          )
+                          const remainingClasses = selectedClasses.filter(classItem => classItem._id !== id);
+                          setSelectedClasses(remainingClasses);
+                    }
+                })
+              
+            }
+          })
+    }
+
     return (
         <div className='w-full'>
             <p className='text-center text-4xl text-rose-700 font-semibold my-4'>My selected classes</p>
@@ -53,7 +87,7 @@ const MySelectedClasses = () => {
                                 <td>${classItem.price}</td>
                                 <td>{classItem.available_seats}</td>
                                 <th>
-                                    <button className="btn bg-rose-700 hover:bg-rose-900 text-white btn-xs">Delete</button>
+                                    <button onClick={() => handleDeleteClass(classItem._id)} className="btn bg-rose-700 hover:bg-rose-900 text-white btn-xs">Delete</button>
                                 </th>
                                 <th>
                                     <button className="btn bg-rose-700 hover:bg-rose-900 text-white btn-xs">Pay</button>
