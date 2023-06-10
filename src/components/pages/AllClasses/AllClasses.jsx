@@ -8,7 +8,7 @@ const AllClasses = () => {
 
     // TODO
     useEffect(() => {
-        fetch('/allClasses.json')
+        fetch('http://localhost:5000/allclass')
             .then(res => res.json())
             .then(data => {
                 setClasses(data);
@@ -26,46 +26,24 @@ const AllClasses = () => {
             </Helmet>
             <p className='text-4xl text-center font-semibold text-rose-700 my-3'>Total Classes: {classes.length}</p>
 
-            <div className="overflow-x-auto">
-                <table className="table">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th>ClassImage</th>
-                            <th>ClassName</th>
-                            <th>InstructorName</th>
-                            <th>Available Seats</th>
-                            <th>Price</th>
-                            <th className='text-center'>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {classes.map(singleClass =>
-                            <tr key={singleClass._id}>
-                                <td>
-                                    <div className="flex items-center space-x-3">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src={singleClass.classImage} alt="Avatar Tailwind CSS Component" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>{singleClass.className}</td>
-                                <td>{singleClass.instructorName}</td>
-                                <td>{singleClass.available_seats}</td>
-                                <td>{singleClass.price}</td>
-                                <th>
-                                    <div className='flex justify-center'>
-                                        <button className="btn bg-rose-700 text-white btn-xs">Select</button>
-                                    </div>
-                                </th>
-                            </tr>
-                        )}
 
-                    </tbody>
-                </table>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>
+            {classes.map(singleClass =>
+                <div  key={singleClass._id} className="card w-full bg-black text-white shadow-xl">
+                    <figure><img src={singleClass.class_image} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <h2 className="card-title">{singleClass.class_name} Class</h2>
+                        <p>Instructor Name: {singleClass.instructor_name}</p>
+                        <p>Available seats: {singleClass.available_seats}</p>
+                        <p>Price: {singleClass.price}</p>
+                        <div className="card-actions justify-center">
+                            <button className="btn bg-rose-700 hover:bg-rose-900 text-white">Select</button>
+                        </div>
+                    </div>
+                </div>
+            )}
             </div>
+
         </div>
     );
 };
