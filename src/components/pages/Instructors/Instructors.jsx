@@ -8,7 +8,7 @@ const Instructors = () => {
 
     // TODO
     useEffect(() => {
-        fetch('/instructor.json')
+        fetch('http://localhost:5000/allinstructors')
             .then(res => res.json())
             .then(data => {
                 setInstructors(data);
@@ -29,7 +29,7 @@ const Instructors = () => {
             {
                 instructors.map(instructor =>
                     <div key={instructor._id} className="w-full h-full relative bg-black text-white shadow-xl">
-                        <figure><img className='p-16 mb-6 rounded-full' src={instructor.instructorImage} alt="Shoes" /></figure>
+                        <figure><img className='w-full p-12 mb-12 rounded-full' src={instructor.image} alt="Shoes" /></figure>
                         <div className="bg-rose-700 p-3 absolute inset-x-0 bottom-0">
                             <h2 className="text-2xl font-semibold">{instructor.name}</h2>
                             <h2 className="text-xl font-semibold">{instructor.email}</h2>
