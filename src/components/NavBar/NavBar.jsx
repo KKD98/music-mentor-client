@@ -3,14 +3,17 @@ import { Link , NavLink} from "react-router-dom";
 import logo from '../../assets/logo.png'
 import { AuthContext } from '../../providers/AuthProvider';
 import { Tooltip } from 'react-tooltip';
+import useAdmin from '../../hooks/useAdmin';
+import useInstructor from '../../hooks/useInstructor';
 
 
 const NavBar = () => {
     const {user , logOut} = useContext(AuthContext);
 
-    // TODO: admin and instructor ke server theke anbo
-    const isAdmin = false;
-    const isInstructor = true;
+   
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
+   
 
     const userImage = user?.photoURL ? user.photoURL : " ";
     const userName = user?.displayName ? user.displayName : " ";
@@ -43,12 +46,8 @@ const NavBar = () => {
                                 background: isActive && "black"
                             };
                         }}>Classes</NavLink></li>
-       {user &&  <li className='hover:text-rose-800'><NavLink to={isAdmin ? '/dashboard/manageallusers' : isInstructor ? '/dashboard/addaclass' : '/dashboard/myselectedclasses'} style={({ isActive }) => {
-                            return {
-                                color: isActive && "red",
-                                background: isActive && "black"
-                            };
-                        }}>DashBoard</NavLink></li>}
+       {user &&  <li><NavLink to={isAdmin ? '/dashboard/manageallusers' : isInstructor ? '/dashboard/addaclass' : '/dashboard/myselectedclasses'} >DashBoard</NavLink></li>}
+    
     </>
     return (
         <div className="navbar fixed z-10 max-w-screen-xl bg-black text-white ">

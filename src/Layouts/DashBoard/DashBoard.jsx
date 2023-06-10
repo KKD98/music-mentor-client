@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
+import useAdmin from '../../hooks/useAdmin';
+import useInstructor from '../../hooks/useInstructor';
 
 const DashBoard = () => {
     // TODO: admin and instructor ke server theke anbo
-    const isAdmin = false;
-    const isInstructor = true;
+    // const isAdmin = false;
+    const [isAdmin] = useAdmin();
+    // const isInstructor = true;
+    const [isInstructor] = useInstructor();
 
     return (
         <div className="drawer lg:drawer-open">
