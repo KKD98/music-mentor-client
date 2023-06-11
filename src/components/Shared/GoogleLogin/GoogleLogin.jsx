@@ -36,7 +36,7 @@ const GoogleLogin = () => {
     return (
         <div className='text-center my-3'>
             <button onClick={handleGoogleSignIn}>
-                <FaGoogle className='text-blue-600 text-2xl'></FaGoogle>
+                <FaGoogle className='  text-2xl'></FaGoogle>
             </button>
         </div>
     );

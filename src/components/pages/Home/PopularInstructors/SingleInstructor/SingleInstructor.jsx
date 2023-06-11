@@ -1,17 +1,21 @@
 import React from 'react';
 
 const SingleInstructor = ({ singleInstructor }) => {
-    const { instructorImage, name, instructor_class } = singleInstructor;
+    const { image, instructor_name, class_names} = singleInstructor;
     return (
-        <div className="flex items-center bg-black text-white">
+        <div className="flex items-center p-3 bg-black text-white">
             <div className='w-1/2'>
-                <img className='w-[60%]' src={instructorImage} alt="" />
+                <img className='w-[70%]' src={image} alt="" />
             </div>
-            <div className='w-1/2'>
-                <p>Instructor Name: {name}</p>
-                {
-                    instructor_class.map(item => <p key={item}>{item}</p>)
-                }
+            <div className='w-1/2 flex-1'>
+                <p className='text-rose-700 text-2xl mb-2'>Instructor Name: {instructor_name}</p>
+                <div>
+                    <p>Classes taken by {instructor_name} are:</p>
+                    {
+                        class_names.map((name, index) => <p key={index}>{index+1}. {name}</p>)
+                    }
+                    
+                </div>
             </div>
         </div>
     );
