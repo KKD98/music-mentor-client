@@ -4,7 +4,8 @@ import PopularClasses from '../PopularClasses/PopularClasses';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import { Helmet } from 'react-helmet-async';
 
-const HomePage = () => {
+const HomePage = ({theme}) => {
+    
     return (
         <div>
         <Helmet>

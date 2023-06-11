@@ -19,6 +19,7 @@ import MyEnrolledClasses from "../components/pages/DashBoard/StudentDashBoard/My
 import StudentRoute from "./StudentRoute";
 import Payment from "../components/pages/DashBoard/Payment/Payment";
 import PaymentHistory from "../components/pages/DashBoard/StudentDashBoard/PaymentHistory/PaymentHistory";
+import Feedback from "../components/pages/DashBoard/AdminDashBoard/Feedback";
 
 
 
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
         {
           path: "manageallclasses",
           element: <AdminRoute><ManageAllClasses></ManageAllClasses></AdminRoute>
+        },
+        {
+          path: "feedback/:id",
+          element: <AdminRoute><Feedback></Feedback></AdminRoute>
         },
         // student route
         {

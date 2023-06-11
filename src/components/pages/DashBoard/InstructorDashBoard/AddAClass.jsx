@@ -51,17 +51,17 @@ const AddAClass = () => {
     };
 
     return (
-        <div className='w-full'>
+        <div className=' bg-black w-[90%] h-[620px]'>
             <Helmet>
                 <title>AddAClass | MusicMentor</title>
             </Helmet>
-            <p className='text-rose-700 text-4xl text-center font-semibold my-4'>Add a class</p>
+            <p className='text-white text-4xl text-center font-semibold -mb-16 pt-4'>Add a class</p>
 
-            <div className='flex justify-center'>
+            <div className='flex justify-center p-4'>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Select Class Name*</span>
+                    <div className="form-control w-full max-w-xs -mb-5">
+                        <label className="label -mb-2">
+                            <span className="label-text text-white">Select Class Name*</span>
                         </label>
                         <select defaultValue="Pick one" className="select select-bordered"  {...register("class_name", { required: true })}>
                             <option disabled>Pick one</option>
@@ -75,32 +75,33 @@ const AddAClass = () => {
                             <option>Flute</option>
                         </select>
                     </div>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Class Image*</span>
+                    <div className="form-control w-full max-w-xs -mb-5">
+                        <label className="label -mb-2">
+                            <span className="label-text text-white">Class Image*</span>
                         </label>
+                        
                         <input type="file" className="file-input file-input-bordered w-full max-w-xs"
                             {...register("class_image", { required: true })}
                         />
                     </div>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Available Seats*</span>
+                    <div className="form-control w-full max-w-xs -mb-5">
+                        <label className="label -mb-2">
+                            <span className="label-text text-white">Available Seats*</span>
                         </label>
                         <input type="text" placeholder="Available Seats" className="input input-bordered w-full max-w-xs"
                             {...register("available_seats", { required: true })}
                         />
                     </div>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Price*</span>
+                    <div className="form-control w-full max-w-xs -mb-5">
+                        <label className="label -mb-2">
+                            <span className="label-text text-white">Price*</span>
                         </label>
                         <input type="text" placeholder="Price" className="input input-bordered w-full max-w-xs"
                             {...register("price", { required: true })}
                         />
                     </div>
                     <div className='my-4 flex justify-center'>
-                        <input className='btn btn-sm bg-rose-700 hover:bg-rose-900 text-white ' type="submit" value="Add Class" />
+                        <input className='btn btn-sm w-[50%] bg-rose-700 hover:bg-rose-900 text-white ' type="submit" value="Add Class" />
                     </div>
                 </form>
             </div>

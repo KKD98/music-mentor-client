@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 
 const Main = () => {
     const location = useLocation();
-    const isLoginOrSignUp = location.pathname.includes('login') || location.pathname.includes('signup')
+    const isLoginOrSignUp = location.pathname.includes('login') || location.pathname.includes('signup');
     return (
         <div>
             {isLoginOrSignUp || <NavBar></NavBar>}

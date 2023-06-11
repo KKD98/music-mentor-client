@@ -30,14 +30,13 @@ const AllClasses = () => {
         return res.json();
       });
     
-      console.log(classes);
 
     return (
         <div className='pt-16'>
             <Helmet>
                 <title>AllClasses | MusicMentor</title>
             </Helmet>
-            <p className='text-4xl text-center font-semibold text-rose-700 my-3'>Total Classes: {classes.length}</p>
+            <p className='text-4xl text-center font-semibold text-rose-700 my-3'>All Classes</p>
 
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>

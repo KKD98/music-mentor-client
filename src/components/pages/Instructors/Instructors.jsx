@@ -18,13 +18,12 @@ const Instructors = () => {
             });
     }, []);
 
-    console.log(instructors);
     return (
         <div className='w-full pt-16'>
             <Helmet>
-                <title>MyClasses | MusicMentor</title>
+                <title>AllInstructors | MusicMentor</title>
             </Helmet>
-            <h1 className='text-center text-4xl text-rose-700 font-semibold my-4'>My All Classes</h1>
+            <h1 className='text-center text-4xl text-rose-700 font-semibold my-4'> All Instructors</h1>
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-3'>
             {
                 instructors.map(instructor =>

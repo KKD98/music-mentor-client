@@ -24,13 +24,12 @@ const Login = () => {
     };
 
     const onSubmit = data => {
-        console.log(data);
+
         reset();
         
         signIn(data.email , data.password)
         .then(result => {
             const user = result.user;
-            console.log(user);
             Swal.fire({
                 title: 'User login Successfully',
                 showClass: {

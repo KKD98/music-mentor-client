@@ -7,7 +7,6 @@ const PopularInstructors = () => {
         fetch('http://localhost:5000/popularinstructors')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             setAllInstructor(data)
         })
     },[])
