@@ -8,7 +8,7 @@ const Instructors = () => {
 
     // TODO
     useEffect(() => {
-        fetch('http://localhost:5000/allinstructors')
+        fetch('https://music-mentor-server.vercel.app/allinstructors')
             .then(res => res.json())
             .then(data => {
                 setInstructors(data);

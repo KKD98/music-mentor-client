@@ -11,7 +11,7 @@ const MySelectedClasses = () => {
     console.log(selectedClasses)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myselectedclass/${user?.email}`)
+        fetch(`https://music-mentor-server.vercel.app/myselectedclass/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setSelectedClasses(data);
@@ -33,7 +33,7 @@ const MySelectedClasses = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myselectedclass/${id}`, {
+                fetch(`https://music-mentor-server.vercel.app/myselectedclass/${id}`, {
                     method: "DELETE"
                 })
                 .then(res => res.json())

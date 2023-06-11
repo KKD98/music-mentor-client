@@ -12,7 +12,7 @@ const MyClasses = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myclass/${user?.email}`)
+        fetch(`https://music-mentor-server.vercel.app/myclass/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setClasses(data);

@@ -17,7 +17,7 @@ const SingleClass = ({classItem}) => {
 
         if(user && user.email){
             const classItem = {classItemId: _id, class_name, class_image, price, available_seats, instructor_name, email: user.email};
-            fetch('http://localhost:5000/selectedclasses', {
+            fetch('https://music-mentor-server.vercel.app/selectedclasses', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

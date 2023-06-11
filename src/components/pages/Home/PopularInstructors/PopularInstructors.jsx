@@ -4,7 +4,7 @@ import SingleInstructor from './SingleInstructor/SingleInstructor';
 const PopularInstructors = () => {
     const [allInstructor, setAllInstructor] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/popularinstructors')
+        fetch('https://music-mentor-server.vercel.app/popularinstructors')
         .then(res => res.json())
         .then(data => {
             setAllInstructor(data)

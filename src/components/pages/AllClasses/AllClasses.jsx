@@ -13,7 +13,7 @@ const AllClasses = () => {
     // const [classes, setClasses] = useState([]);
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/allclass')
+    //     fetch('https://music-mentor-server.vercel.app/allclass')
     //         .then(res => res.json())
     //         .then(data => {
     //             setClasses(data);
@@ -26,7 +26,7 @@ const AllClasses = () => {
     // console.log(classes);
 
     const { data: classes = [], isLoading: loading } = useQuery(['allclasses'], async () => {
-        const res = await fetch('http://localhost:5000/allclass');
+        const res = await fetch('https://music-mentor-server.vercel.app/allclass');
         return res.json();
       });
     

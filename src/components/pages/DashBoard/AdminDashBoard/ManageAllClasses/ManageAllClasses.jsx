@@ -21,7 +21,7 @@ const ManageAllClasses = () => {
         const classId = classItem._id;
         console.log(classId)
         setButtonDisabled(classId);
-        fetch(`http://localhost:5000/allclass/${classId}`, {
+        fetch(`https://music-mentor-server.vercel.app/allclass/${classId}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"
@@ -48,7 +48,7 @@ const ManageAllClasses = () => {
         const status = "deny";
         const classId = classItem._id;
         setButtonDisabled(classId);
-        fetch(`http://localhost:5000/allclass/${classId}`, {
+        fetch(`https://music-mentor-server.vercel.app/allclass/${classId}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

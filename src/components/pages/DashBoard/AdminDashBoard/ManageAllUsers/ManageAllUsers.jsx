@@ -20,7 +20,7 @@ const ManageAllUsers = () => {
         const role = "admin";
         const userId = user._id;
         setButtonDisabled(userId);
-        fetch(`http://localhost:5000/users/${userId}`, {
+        fetch(`https://music-mentor-server.vercel.app/users/${userId}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"
@@ -47,7 +47,7 @@ const ManageAllUsers = () => {
         const role = "instructor";
         const userId = user._id;
         setButtonDisabled(userId);
-        fetch(`http://localhost:5000/users/${userId}`, {
+        fetch(`https://music-mentor-server.vercel.app/users/${userId}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

@@ -4,7 +4,7 @@ import SingleClass from '../SingleClass/SingleClass';
 const PopularClasses = () => {
     const [classes , setClasses] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/popularclasses')
+        fetch('https://music-mentor-server.vercel.app/popularclasses')
         .then(res => res.json())
         .then(data => {
             setClasses(data)
