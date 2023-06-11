@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MySelectedClasses = () => {
     const [selectedClasses, setSelectedClasses] = useState([]);
@@ -51,6 +52,7 @@ const MySelectedClasses = () => {
           })
     }
 
+
     return (
         <div className='w-full'>
             <p className='text-center text-4xl text-rose-700 font-semibold my-4'>My selected classes</p>
@@ -90,7 +92,7 @@ const MySelectedClasses = () => {
                                     <button onClick={() => handleDeleteClass(classItem._id)} className="btn bg-rose-700 hover:bg-rose-900 text-white btn-xs">Delete</button>
                                 </th>
                                 <th>
-                                    <button className="btn bg-rose-700 hover:bg-rose-900 text-white btn-xs">Pay</button>
+                                   <Link to={`/dashboard/payment?classItem=${encodeURIComponent(JSON.stringify(classItem))}`}> <button className="btn bg-rose-700 hover:bg-rose-900 text-white btn-xs">Pay</button></Link>
                                 </th>
                             </tr>
                         )}
