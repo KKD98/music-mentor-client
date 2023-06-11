@@ -71,7 +71,7 @@ const DashBoard = () => {
                             background: isActive && "black"
                         };
                     }}>My Enrolled Classes</NavLink></li>
-                    <li className='text-2xl font-semibold'><NavLink to="/dashboard/myclasses" style={({ isActive }) => {
+                    <li className='text-2xl font-semibold'><NavLink to="/dashboard/paymenthistory" style={({ isActive }) => {
                         return {
                             color: isActive && "#660032",
                             background: isActive && "black"
