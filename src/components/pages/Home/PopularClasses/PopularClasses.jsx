@@ -4,7 +4,7 @@ import SingleClass from '../SingleClass/SingleClass';
 const PopularClasses = () => {
     const [classes , setClasses] = useState([]);
     useEffect(() => {
-        fetch('class.json')
+        fetch('http://localhost:5000/popularclasses')
         .then(res => res.json())
         .then(data => {
             console.log(data);

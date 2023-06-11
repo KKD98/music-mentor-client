@@ -2,20 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleClass = ({ classItem }) => {
-    const { className, classImage, amount,  enroll_total_student, instructorName, totalStudent } = classItem;
+    const { class_name, class_image, price,  enrolled_student, instructor_name, } = classItem;
     return (
         <div className="card w-full bg-black text-white shadow-xl">
             <figure className="px-0 pt-0">
-                <img  src={classImage} />
+                <img className='p-2 h-64 w-full'  src={class_image} />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{className}</h2>
+            <p className="text-xl">Instructor Name: {instructor_name}</p>
+                <h2 className="text-xl">Class Name: {class_name}</h2>
                 <div className='flex gap-3 justify-between w-full my-2'>
-                <p>Amount: ${amount}</p>
-                <p>Total Student: {totalStudent}</p>
-                </div>
-                <div className="card-actions">
-                   <Link to="/allclasses"> <button className="btn bg-rose-700 border-none text-white hover:bg-rose-900">See All Classes</button></Link>
+                <p>Price: ${price}</p>
+                <p>Enrolled Student: {enrolled_student}</p>
                 </div>
             </div>
         </div>
