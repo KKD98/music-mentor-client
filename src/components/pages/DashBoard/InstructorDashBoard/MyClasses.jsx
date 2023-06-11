@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { AuthContext } from '../../../../providers/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const MyClasses = () => {
     const [classes, setClasses] = useState([]);
@@ -38,6 +39,7 @@ const MyClasses = () => {
                             <th>Price</th>
                             <th>Status</th>
                             <th>Feedback</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,6 +60,9 @@ const MyClasses = () => {
                             <td>{myClass.price}</td>
                             <td>{myClass.status}</td>
                             <td>{myClass.feedback? myClass.feedback : "No feedback"}</td>
+                            <th>
+                                   <Link to={`/dashboard/classupdate/${myClass._id}`}> <button className="btn bg-rose-700 hover:bg-rose-900 text-white btn-xs">Update</button></Link>
+                                </th>
                         </tr>
                         )}
                        

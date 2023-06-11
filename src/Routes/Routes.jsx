@@ -20,6 +20,7 @@ import StudentRoute from "./StudentRoute";
 import Payment from "../components/pages/DashBoard/Payment/Payment";
 import PaymentHistory from "../components/pages/DashBoard/StudentDashBoard/PaymentHistory/PaymentHistory";
 import Feedback from "../components/pages/DashBoard/AdminDashBoard/Feedback";
+import UpdateClass from "../components/pages/DashBoard/InstructorDashBoard/UpdateClass/UpdateClass";
 
 
 
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
         {
           path:"myclasses",
           element: <InstructorRoute><MyClasses></MyClasses></InstructorRoute>
+        },
+        {
+          path:"classupdate/:id",
+          element: <InstructorRoute><UpdateClass></UpdateClass></InstructorRoute>
         },
         // admin route
         {

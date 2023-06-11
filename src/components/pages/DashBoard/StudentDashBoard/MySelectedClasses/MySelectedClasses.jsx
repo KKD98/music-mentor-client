@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const MySelectedClasses = () => {
     const [selectedClasses, setSelectedClasses] = useState([]);
@@ -55,6 +56,9 @@ const MySelectedClasses = () => {
 
     return (
         <div className='w-full'>
+        <Helmet>
+                <title>SelectedClass | MusicMentor</title>
+            </Helmet>
             <p className='text-center text-4xl text-rose-700 font-semibold my-4'>My selected classes</p>
             <div className="overflow-x-auto">
                 <table className="table">

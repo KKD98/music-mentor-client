@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import { AuthContext } from '../../../../../providers/AuthProvider';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const MyEnrolledClasses = () => {
     const [enrolledClasses, setEnrollededClasses] = useState([]);
@@ -22,6 +23,9 @@ const MyEnrolledClasses = () => {
     }, []);
     return (
         <div className='w-full'>
+        <Helmet>
+                <title>EnrolledClass | MusicMentor</title>
+            </Helmet>
             <p className='text-center text-4xl text-rose-700 font-semibold my-4'>My Enrolled Classes</p>
             <div className="overflow-x-auto">
                 <table className="table">
