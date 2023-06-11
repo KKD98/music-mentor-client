@@ -8,11 +8,6 @@ import { useLocation } from 'react-router-dom';
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK)
 
 const Payment = () => {
-    // const location = useLocation();
-    // const queryParams = new URLSearchParams(location.search);
-    // const price = queryParams.get('price');
-    // const total = parseFloat(price);
-    // console.log('Total: ' , total)
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const classItem = JSON.parse(decodeURIComponent(queryParams.get('classItem')));

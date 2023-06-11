@@ -26,7 +26,7 @@ const AllClasses = () => {
     // console.log(classes);
 
     const { data: classes = [], isLoading: loading } = useQuery(['allclasses'], async () => {
-        const res = await fetch('https://music-mentor-server.vercel.app/allclass');
+        const res = await fetch('https://music-mentor-server.vercel.app/approvedclass');
         return res.json();
       });
     
