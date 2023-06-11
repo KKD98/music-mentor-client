@@ -1,14 +1,17 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { AuthContext } from '../../../../providers/AuthProvider';
 
 const MyClasses = () => {
     const [classes, setClasses] = useState([]);
+    const {user} = useContext(AuthContext);
 
-    // TODO
+
     useEffect(() => {
-        fetch('/allClasses.json')
+        fetch(`http://localhost:5000/myclass/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setClasses(data);
@@ -44,13 +47,13 @@ const MyClasses = () => {
                                 <div className="flex items-center space-x-3">
                                     <div className="avatar">
                                         <div className="mask mask-squircle w-12 h-12">
-                                            <img src={myClass.classImage} alt="Avatar Tailwind CSS Component" />
+                                            <img src={myClass.class_image} alt="Avatar Tailwind CSS Component" />
                                         </div>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                               {myClass.className}
+                               {myClass.class_name}
                             </td>
                             <td>{myClass.price}</td>
                             <td>{myClass.status}</td>
