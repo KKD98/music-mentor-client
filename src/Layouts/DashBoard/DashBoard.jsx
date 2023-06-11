@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../../hooks/useAdmin';
 import useInstructor from '../../hooks/useInstructor';
 import useStudent from '../../hooks/useStudent';
+import { FaCheck, FaCheckDouble, FaFolder, FaHome, FaRegPlusSquare, FaUserShield, FaUsers, FaWallet } from 'react-icons/fa';
 
 const DashBoard = () => {
 
@@ -20,7 +21,7 @@ const DashBoard = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 h-full bg-black text-white">
+                <ul className="menu p-4 w-90 h-full bg-black text-white">
 
                     {
                         isAdmin && <> <li className='text-2xl font-semibold'><NavLink to="/dashboard/manageallusers" style={({ isActive }) => {
@@ -28,13 +29,13 @@ const DashBoard = () => {
                                 color: isActive && "#660032",
                                 background: isActive && "black"
                             };
-                        }}>Manage Users</NavLink></li>
+                        }}><FaUsers></FaUsers> Manage Users</NavLink></li>
                             <li className='text-2xl font-semibold'><NavLink to="/dashboard/manageallclasses" style={({ isActive }) => {
                                 return {
                                     color: isActive && "#660032",
                                     background: isActive && "black"
                                 };
-                            }}>Manage Classes</NavLink></li></>
+                            }}><FaUserShield></FaUserShield> Manage Classes</NavLink></li></>
 
                     }
 
@@ -46,13 +47,13 @@ const DashBoard = () => {
                             color: isActive && "#660032",
                             background: isActive && "black"
                         };
-                    }}>Add a class</NavLink></li>
+                    }}><FaRegPlusSquare></FaRegPlusSquare> Add a class</NavLink></li>
                     <li className='text-2xl font-semibold'><NavLink to="/dashboard/myclasses" style={({ isActive }) => {
                         return {
                             color: isActive && "#660032",
                             background: isActive && "black"
                         };
-                    }}>My Classes</NavLink></li>
+                    }}><FaFolder></FaFolder> My Classes</NavLink></li>
                             </> 
 
                     }
@@ -64,19 +65,19 @@ const DashBoard = () => {
                             color: isActive && "#660032",
                             background: isActive && "black"
                         };
-                    }}>My selected class</NavLink></li>
+                    }}><FaCheck></FaCheck> My selected class</NavLink></li>
                     <li className='text-2xl font-semibold'><NavLink to="/dashboard/myenrolledclasses" style={({ isActive }) => {
                         return {
                             color: isActive && "#660032",
                             background: isActive && "black"
                         };
-                    }}>My Enrolled Classes</NavLink></li>
+                    }}><FaCheckDouble></FaCheckDouble> My Enrolled Classes</NavLink></li>
                     <li className='text-2xl font-semibold'><NavLink to="/dashboard/paymenthistory" style={({ isActive }) => {
                         return {
                             color: isActive && "#660032",
                             background: isActive && "black"
                         };
-                    }}>Payment History</NavLink></li>
+                    }}><FaWallet></FaWallet> Payment History</NavLink></li>
 </>
                     }
 
@@ -87,7 +88,7 @@ const DashBoard = () => {
                             color: isActive && "#660032",
                             background: isActive && "black"
                         };
-                    }}>Home</NavLink></li>
+                    }}><FaHome></FaHome> Home</NavLink></li>
 
                 </ul>
 
