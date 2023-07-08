@@ -8,7 +8,7 @@ const ExtraSection = () => {
     return (
         <div className="my-4 relative">
       <div className="relative">
-        <img src={img} alt="Extra Image" />
+        <img src={img} alt="Extra Image" className='md:h-screen w-full'/>
         <div className="slider-text absolute top-0 lg:top-14 left-0 p-8 text-white">
         <Slide>
           <p className="text-xl lg:text-4xl font-bold">

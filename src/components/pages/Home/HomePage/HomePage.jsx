@@ -4,6 +4,7 @@ import PopularClasses from '../PopularClasses/PopularClasses';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import { Helmet } from 'react-helmet-async';
 import ExtraSection from '../ExtraSection/ExtraSection';
+import ChooseUsSection from '../ChooseUsSection/ChooseUsSection';
 
 const HomePage = ({theme}) => {
     
@@ -13,6 +14,7 @@ const HomePage = ({theme}) => {
             <title>Home | MusicMentor</title>
         </Helmet>
             <Banner></Banner>
+            <ChooseUsSection></ChooseUsSection>
             <PopularClasses></PopularClasses>
             <PopularInstructors></PopularInstructors>
             <ExtraSection></ExtraSection>

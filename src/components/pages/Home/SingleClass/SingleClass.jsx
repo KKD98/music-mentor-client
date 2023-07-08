@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const SingleClass = ({ classItem }) => {
     const { class_name, class_image, price,  enrolled_student, instructor_name, } = classItem;
     return (
-        <div className="card w-full bg-black text-white shadow-xl">
+        <div className="card w-full text-white bg-black shadow-black border-2 border-rose-800 shadow-xl">
             <figure className="px-0 pt-0">
-                <img className='p-2 h-64 w-full'  src={class_image} />
+                <img className='p-4 h-56 w-full'  src={class_image} />
             </figure>
             <div className="card-body items-center text-center">
             <p className="text-xl">Instructor Name: {instructor_name}</p>

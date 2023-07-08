@@ -31,7 +31,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <footer className="footer footer-center p-4 bg-rose-700 text-white">
+            <footer className="footer footer-center p-4 bg-black text-white">
                 <div>
                     <p>Copyright © 2023 - All right reserved by Music Mentor</p>
                 </div>
