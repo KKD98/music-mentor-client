@@ -5,6 +5,8 @@ import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import { Helmet } from 'react-helmet-async';
 import ExtraSection from '../ExtraSection/ExtraSection';
 import ChooseUsSection from '../ChooseUsSection/ChooseUsSection';
+import QuickFacts from '../QuickFacts/QuickFacts';
+import Reviews from '../Reviews/Reviews';
 
 const HomePage = ({theme}) => {
     
@@ -15,9 +17,11 @@ const HomePage = ({theme}) => {
         </Helmet>
             <Banner></Banner>
             <ChooseUsSection></ChooseUsSection>
+            <QuickFacts></QuickFacts>
             <PopularClasses></PopularClasses>
             <PopularInstructors></PopularInstructors>
             <ExtraSection></ExtraSection>
+            <Reviews></Reviews>
         </div>
     );
 };
