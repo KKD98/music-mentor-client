@@ -55,12 +55,12 @@ const SingleClass = ({classItem}) => {
     }
 
     const cardStyle = {
-        backgroundColor: available_seats === 0 ? '#FF0000' : '#000000'
+        backgroundColor: available_seats === 0 ? '#FF0000' : '#FFFFFF'
       };
     
     return (
-        <div key={_id} className="card w-full text-white shadow-xl" style={{ backgroundColor: cardStyle.backgroundColor }}>
-            <figure><img className='p-5 w-full h-64' src={class_image} alt="Shoes" /></figure>
+        <div key={_id} className="w-full text-black shadow-black border-2 border-rose-800 shadow-xl rounded-lg" style={{ backgroundColor: cardStyle.backgroundColor }}>
+            <figure><img className=' w-full h-64 p-1 rounded-lg' src={class_image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{class_name} Class</h2>
                 <p>Instructor Name: {instructor_name}</p>

@@ -7,6 +7,7 @@ import ExtraSection from '../ExtraSection/ExtraSection';
 import ChooseUsSection from '../ChooseUsSection/ChooseUsSection';
 import QuickFacts from '../QuickFacts/QuickFacts';
 import Reviews from '../Reviews/Reviews';
+import MusicalInstruments from '../MusicalInstruments/MusicalInstruments';
 
 const HomePage = ({theme}) => {
     
@@ -18,6 +19,7 @@ const HomePage = ({theme}) => {
             <Banner></Banner>
             <ChooseUsSection></ChooseUsSection>
             <QuickFacts></QuickFacts>
+            <MusicalInstruments></MusicalInstruments>
             <PopularClasses></PopularClasses>
             <PopularInstructors></PopularInstructors>
             <ExtraSection></ExtraSection>

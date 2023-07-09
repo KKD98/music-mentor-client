@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from "react-router-dom";
-import logo from '../../assets/logo.png'
+import logo from '../../assets/testlogo.jpg'
 import { AuthContext } from '../../providers/AuthProvider';
 import { Tooltip } from 'react-tooltip';
 import useAdmin from '../../hooks/useAdmin';
@@ -30,19 +30,19 @@ const NavBar = () => {
     const navbarOptions = <>
         <li className='hover:text-rose-800'><NavLink to="/" style={({ isActive }) => {
             return {
-                color: isActive && "red",
+                color: isActive && "white",
                 background: isActive && "black"
             };
         }}>Home</NavLink></li>
         <li className='hover:text-rose-800'><NavLink to="/instructors" style={({ isActive }) => {
             return {
-                color: isActive && "red",
+                color: isActive && "white",
                 background: isActive && "black"
             };
         }}>Instructors</NavLink></li>
         <li className='hover:text-rose-800'><NavLink to="/allclasses" style={({ isActive }) => {
             return {
-                color: isActive && "red",
+                color: isActive && "white",
                 background: isActive && "black"
             };
         }}>Classes</NavLink></li>
@@ -52,7 +52,7 @@ const NavBar = () => {
 
     </>
     return (
-        <div className="navbar fixed z-10 bg-black text-white ">
+        <div className="navbar fixed z-10 bg-white text-black ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -63,7 +63,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <img className='w-[20px]' src={logo} alt="" />
+                    <img className='w-[25px]' src={logo} alt="" />
                     <a className="text-xl ml-0">MusicMentor</a>
                 </div>
             </div>
@@ -79,7 +79,7 @@ const NavBar = () => {
                 }
                 {
                     user ? <button onClick={handleLogOut} className="btn bg-rose-700 border-none text-white hover:bg-rose-900">Logout</button> :
-                        <Link to="/login" className="btn bg-rose-700 border-none text-white hover:bg-rose-900">Login</Link>
+                        <Link to="/login" className="btn btn-sm bg-rose-700 border-none text-white hover:bg-rose-900">Login</Link>
                 }
             </div>
         </div>

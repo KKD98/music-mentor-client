@@ -36,10 +36,10 @@ const AllClasses = () => {
             <Helmet>
                 <title>AllClasses | MusicMentor</title>
             </Helmet>
-            <p className='text-4xl text-center font-semibold text-rose-700 my-3'>All Classes</p>
+            <p className='text-4xl text-center font-semibold text-black my-3'>All Classes</p>
 
 
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 w-full px-4'>
             {classes.map(classItem =>
                <SingleClass key={classItem._id} classItem={classItem}></SingleClass>
             )}
